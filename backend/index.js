@@ -12,13 +12,6 @@ app.use(express.json());
 
 // Middleware for handling CORS POLICY
 app.use(cors());
-// app.use(
-//   cors({
-//     origin: "https://localhost:3000",
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     allowedHeaders: ["Content-Type"],
-//   })
-// );
 
 app.get("/", (request, response) => {
   console.log(request);
@@ -36,5 +29,6 @@ mongoose
     });
   })
   .catch((error) => {
-    console.log(error);
+    console.error("Error connecting to MongoDB:", error);
   });
+
